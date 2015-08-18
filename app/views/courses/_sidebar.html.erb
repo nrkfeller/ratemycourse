@@ -1,0 +1,29 @@
+<div id='sidebar'>
+    <div id='logo'>
+      <%= link_to root_path do %>
+        root
+      <% end %>
+    </div>
+    <%= form_tag courses_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+    <% end %>
+    <ul>
+      <li class='category'>Website</li>
+      <li>1wqer</li>
+      <li>2qwer</li>
+    </ul>
+    
+    <ul>
+      <% @courses.each do |course| %>
+        <tr>
+          <li><td><%= link_to course.name, course_path(course) %></td></li>
+        </tr>
+      <% end %>
+    </ul>
+    
+    <%= will_paginate @courses %>
+    
+</div>
