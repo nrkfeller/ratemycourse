@@ -1,16 +1,17 @@
 <div id='sidebar'>
     <div id='logo'>
       <%= link_to root_path do %>
-        root
+        #picture
       <% end %>
     </div>
-    
-    <%= form_tag courses_path, :method => 'get' do %>
-      <p>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search", :name => nil %>
-      </p>
-    <% end %>
+    <div class='form-inputs'>
+        <%= form_tag courses_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+          </p>
+        <% end %>
+    </div>
     <ul>
       <li class='category'>Website</li>
       <li>1wqer</li>
