@@ -8,7 +8,7 @@
         <%= form_tag courses_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :name => nil %>
+            <%= submit_tag "Search", :code => nil %>
           </p>
         <% end %>
     </div>
@@ -21,7 +21,7 @@
     <ul>
       <% @courses.each do |course| %>
         <tr>
-          <li><td><%= link_to course.name, course_path(course) %></td></li>
+          <li><td><%= link_to course.code, course_path(course) %></td></li>
         </tr>
       <% end %>
     </ul>
